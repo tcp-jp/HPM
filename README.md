@@ -4,21 +4,27 @@ Installing Horizon packages and dependencies made easy.
 ## Backend
 #### HPM Database
 Table - Packages
+
 Columns - PackageGUID VARCHAR(36) PRIMARY KEY, PackageName VARCHAR(24), Version VARCHAR(10), VersionFile NTEXT
 
 Table - Dependencies
+
 Columns - PackageGUID VARCHAR(36) FORIEGN KEY, DependencyGUID VARCHAR(36), Version VARCHAR(10), VersionFile NTEXT
 
 Table - Installation
+
 Columns - PackageGUID VARCHAR(36) FORIEGN KEY, StepIndex INT, Step NTEXT
 
 Table - Update 
+
 Columns - PackageGUID VARCHAR(36) FORIEGN KEY, StepIndex INT, Step NTEXT
 
 Table - Uninstall
+
 Columns - PackageGUID VARCHAR(36) FORIEGN KEY, StepIndex INT, Step NTEXT
 
 ## Commandline Tool
+
 Install, update and uninstall Horizon Packages and dependencies
 
 #### Logic 
