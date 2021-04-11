@@ -1,8 +1,7 @@
 # Horizon Package Manager
 Installing Horizon packages and dependencies made easy.
 
-### Backend
----
+## Backend
 #### HPM Database
 Table - Packages
 Columns - PackageGUID VARCHAR(36) PRIMARY KEY, PackageName VARCHAR(24), Version VARCHAR(10), VersionFile NTEXT
