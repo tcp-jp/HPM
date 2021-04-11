@@ -2,31 +2,34 @@
 Installing Horizon packages and dependencies made easy.
 
 ## Backend
+### HPM Webserver
+For API requests
+
+Server - Kali Linux x64 (Debian) hosted as a VM on HyperV
+
+Written in NodeJS 
 #### HPM Database
-Table - Packages
+Stores packages, dependencies and install, update and uninstall commands for all of these
 
-Columns - PackageGUID VARCHAR(36) PRIMARY KEY, PackageName VARCHAR(24), Version VARCHAR(10), VersionFile NTEXT
+* **Table - Packages**
+* Columns - PackageGUID VARCHAR(36) PRIMARY KEY, PackageName VARCHAR(24), Version VARCHAR(10), VersionFile NTEXT
 
-Table - Dependencies
+* **Table - Dependencies**
+* Columns - PackageGUID VARCHAR(36) FORIEGN KEY, DependencyGUID VARCHAR(36), Version VARCHAR(10), VersionFile NTEXT
 
-Columns - PackageGUID VARCHAR(36) FORIEGN KEY, DependencyGUID VARCHAR(36), Version VARCHAR(10), VersionFile NTEXT
+* **Table - Installation**
+* Columns - PackageGUID VARCHAR(36) FORIEGN KEY, StepIndex INT, Step NTEXT
 
-Table - Installation
+* **Table - Update**
+* Columns - PackageGUID VARCHAR(36) FORIEGN KEY, StepIndex INT, Step NTEXT
 
-Columns - PackageGUID VARCHAR(36) FORIEGN KEY, StepIndex INT, Step NTEXT
-
-Table - Update 
-
-Columns - PackageGUID VARCHAR(36) FORIEGN KEY, StepIndex INT, Step NTEXT
-
-Table - Uninstall
-
-Columns - PackageGUID VARCHAR(36) FORIEGN KEY, StepIndex INT, Step NTEXT
+* **Table - Uninstall**
+* Columns - PackageGUID VARCHAR(36) FORIEGN KEY, StepIndex INT, Step NTEXT
 
 ## Commandline Tool
-
 Install, update and uninstall Horizon Packages and dependencies
 
+Written in Python and compiled into an exe on a 32bit Windows 7 build so it can be used on any Windows 7 or later with any CPU architecture 
 #### Logic 
 ##### Installing
 1. Sends API request to webserver 
@@ -50,12 +53,13 @@ Install, update and uninstall Horizon Packages and dependencies
     2. Dependency is installed if it is missing
 3. Check if package is already installed 
     1. Check VersionFile if Version is latest
-       1. Perform update if not // Check with user first
-4. Store the version in VersionFile location
-5. Package is then installed
-
-4. Store the version in VersionFile location
+       1. Perform update if not
+4. Update VersionFile to the new version
+5. Package is then updated
 
 ##### Uninstalling
-
-. Send email to Support, Accounts, Joe, Jake (anyone else that wants to be added)
+1. Send API request to webserver
+    1. Notifiy user if request was unsuccessful w/ failure reason
+2. Check if package is installed
+    1. If package is installed perform uninstall steps
+3. Send email to Support, Accounts, Joe, Jake, Sam and anyone else that wants to be added
