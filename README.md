@@ -8,7 +8,7 @@ For API requests
 Server - Kali Linux x64 (Debian) hosted as a VM on HyperV
 
 Written in NodeJS 
-#### HPM Database
+### HPM Database
 Stores packages, dependencies and install, update and uninstall commands for all of these
 
 * **Table - Packages**
@@ -30,8 +30,8 @@ Stores packages, dependencies and install, update and uninstall commands for all
 Install, update and uninstall Horizon Packages and dependencies
 
 Written in Python and compiled into an exe on a 32bit Windows 7 build so it can be used on any Windows 7 or later with any CPU architecture 
-#### Logic 
-##### Installing
+### Logic 
+#### Installing
 1. Sends API request to webserver 
     1. Notifiy user if request was unsuccessful w/ failure reason
 2. Package dependencies checked if they are already installed 
@@ -44,7 +44,7 @@ Written in Python and compiled into an exe on a 32bit Windows 7 build so it can 
 4. Store the version in VersionFile location
 5. Package is then installed
 
-##### Updating
+#### Updating
 1. Sends API request to webserver 
     1. Notifiy user if request was unsuccessful w/ failure reason
 2. Package dependencies checked if they are already installed 
@@ -57,7 +57,7 @@ Written in Python and compiled into an exe on a 32bit Windows 7 build so it can 
 4. Update VersionFile to the new version
 5. Package is then updated
 
-##### Uninstalling
+#### Uninstalling
 1. Send API request to webserver
     1. Notifiy user if request was unsuccessful w/ failure reason
 2. Check if package is installed
