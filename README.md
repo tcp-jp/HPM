@@ -1,9 +1,10 @@
 # Horizon Package Manager
 Installing Horizon packages and dependencies made easy.
 
-## Links
-#### [Overview]
-#### [Roadmap]
+## Documentation
+All documentation can be found [here][onedrive]
+
+This contains roadmaps, specifics on the build and more.
 
 
 
@@ -12,5 +13,4 @@ Installing Horizon packages and dependencies made easy.
 
 
 
-[overview]: https://1drv.ms/p/s!AkIF3GhdBi6tgTDxHcjxGnSe4UDu?e=KTOa9I
-[roadmap]: https://1drv.ms/p/s!AkIF3GhdBi6tgTI_VKBXV8xqY051?e=9Qpjap
+[onedrive]: https://1drv.ms/u/s!AkIF3GhdBi6tgS-WAGgM0SKRNWKU?e=Eneeim
